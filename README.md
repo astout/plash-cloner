@@ -2,7 +2,7 @@
 
 A small double-clickable `.command` script that creates independent clones of **Plash** with their own settings. Each clone receives a unique bundle identifier so macOS stores its preferences separately. This lets you run multiple independent Plash instances (one per monitor) without having to modify the original app.
 
----
+----
 
 ## Why does this exist?
 
@@ -24,7 +24,7 @@ This script creates a clone of the Plash app and changes the bundle identifier s
 
 **Note:** The script installs clones into `~/Applications` (your user Applications directory) by design to avoid requiring admin permissions or prompting for your password. You can move the created clone into `/Applications` later if you prefer system-wide installation.
 
----
+----
 
 ## Why `~/Applications`?
 
@@ -35,7 +35,7 @@ Placing the cloned app into `~/Applications` has two practical benefits:
 
 If you prefer the clone to live in `/Applications`, simply move it there from Finder after creation (you will be prompted for your password by macOS when you do so).
 
----
+----
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ If you prefer the clone to live in `/Applications`, simply move it there from Fi
 
 Download Plash here: https://sindresorhus.com/plash
 
----
+----
 
 ## No Apple Developer account required
 
@@ -56,7 +56,7 @@ codesign --force --deep --sign -
 
 This does not require an Apple Developer account or signing certificate. Ad-hoc signing is sufficient for launching a locally modified app and is what the script uses automatically.
 
-⸻
+----
 
 ### How to use
 
@@ -72,7 +72,13 @@ chmod +x create-plash-clone.command
 
 If you want the app in `/Applications`, move it there via Finder (you may be asked for your password).
 
-⸻
+----
+
+### Keeping your clones up to date
+
+Some improvements could probably be made here, like copying the settings from the original Plash app to the cloned app, but unfortunately for now the only way to update the cloned app is to delete the clone and create a new one from the updated Plash.app.
+
+----
 
 ### Troubleshooting
 
@@ -110,7 +116,7 @@ https://sindresorhus.com/plash
 
 </details>
 
-⸻
+----
 
 ### Credits & Thanks
 
@@ -121,7 +127,7 @@ Plash homepage: https://sindresorhus.com/plash
 
 This script is intended to be a small, non-invasive helper to let users run independent Plash instances. Please consider filing feature requests or contributions upstream if you'd like to see official multi-monitor support.
 
----
+----
 
 ### License / Disclaimer
 
